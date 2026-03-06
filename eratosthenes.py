@@ -19,9 +19,7 @@ def eratosthenes(N):
 
 print('Enter your N:')
 N = int(input())
-# N = 10000
 t0 = time.time()
-print(f"t0: {t0}")
 primes = eratosthenes(N)
 t1 = time.time()
 print(f"time for eratosthenes method: {t1 - t0}")
