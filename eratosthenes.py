@@ -1,10 +1,11 @@
 import time
+import numpy as np
 
 def eratosthenes(N):
     primes = [i for i in range(2, N+1)]
     finish = False
     p0 = 2
-    while not finish:
+    while not finish and p0 <= np.sqrt(N):
         # print(f"p0: {p0}")
         # print(f"primes before: {primes}")
         primes = [i for i in primes if i <= p0 or i % p0 != 0]
@@ -23,5 +24,4 @@ t0 = time.time()
 primes = eratosthenes(N)
 t1 = time.time()
 print(f"time for eratosthenes method: {t1 - t0}")
-print(f"The primes are: {primes}")
-
+print(f"The primes are: {len(primes)}")
